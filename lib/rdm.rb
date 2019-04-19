@@ -6,6 +6,7 @@ module Rdm
   require 'rdm/utils/render_util'
   require 'rdm/utils/string_utils'
   require 'rdm/utils/file_utils'
+  require 'rdm/utils/process_utils'
   require 'rdm/version'
 
   # CLI part
@@ -68,7 +69,7 @@ module Rdm
     # Initialize current package using Package.rb
     def init(package_path, group = nil, stdout: $stdout)
       @stdout = stdout
-      
+
       Rdm::PackageImporter.import_file(package_path, group: group)
     end
 
@@ -100,7 +101,7 @@ module Rdm
       if path
         @root = Rdm::SourceLocator.locate(path)
       end
-        
+
       @root
     end
 
