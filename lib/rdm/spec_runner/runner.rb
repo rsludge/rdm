@@ -205,7 +205,7 @@ class Rdm::SpecRunner::Runner
     end
   end
 
-  def execute_command
+  def execute_commands
     process_pool = Rdm::Utils::ProcessUtils::ParallelWorm.new
 
     process_pool.execute_commands(commands, 4)
